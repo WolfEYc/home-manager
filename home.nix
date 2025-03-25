@@ -140,7 +140,7 @@
     enable = true;
     package = pkgs.emptyDirectory;
     settings = {
-        terminal.shell = "${builtins.getEnv "HOME"}/.nix-profile/bin/fish";
+        terminal.shell = "${pkgs.fish}/bin/fish";
         font = {
           normal = { family = "JetBrainsMono Nerd Font"; };          
           size = if pkgs.stdenv.isDarwin then 24 else 16;
@@ -177,4 +177,16 @@
     };
   };
   
+  programs.tmux = {
+    enable = true;
+    shell = "${pkgs.fish}/bin/fish";
+    terminal = "tmux-256color";
+    plugins = with pkgs; [
+      tmuxPlugins.better-mouse-mode
+    ];
+    extraConfig = ''
+      set -sg escape-time 0
+      set-option -g mouse on
+    '';
+  };
 }
