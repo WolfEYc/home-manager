@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -14,7 +14,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -33,6 +33,7 @@
     bat
     git
     gh
+    delta
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -128,6 +129,8 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      set -x PATH $HOME/.nix-profile/bin $PATH
+      set -x PATH /nix/var/nix/profiles/default/bin $PATH
       starship init fish | source
     '';
   };
@@ -137,10 +140,10 @@
     enable = true;
     package = pkgs.emptyDirectory;
     settings = {
-        terminal.shell = "fish";
+        terminal.shell = "${builtins.getEnv "HOME"}/.nix-profile/bin/fish";
         font = {
           normal = { family = "JetBrainsMono Nerd Font"; };          
-          size = 16;
+          size = if pkgs.stdenv.isDarwin then 24 else 16;
         };
         window.padding = {
           x = 10;
