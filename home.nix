@@ -34,6 +34,8 @@
     git
     gh
     delta
+    vscode-langservers-extracted
+    btop
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -131,6 +133,7 @@
     interactiveShellInit = ''
       set -x PATH $HOME/.nix-profile/bin $PATH
       set -x PATH /nix/var/nix/profiles/default/bin $PATH
+      set -x PATH /usr/local/go/bin $PATH
       starship init fish | source
     '';
   };
@@ -149,6 +152,7 @@
           x = 10;
           y = 10;
         };
+        window.option_as_alt = "Both";
     };
   };
   
