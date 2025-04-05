@@ -136,6 +136,7 @@
       set -x PATH /usr/local/go/bin $PATH
       set -x PATH /usr/local/odin $PATH
       set -x PATH /usr/local/ols $PATH
+      set -x PATH /usr/local/zig $PATH
       starship init fish | source
     '';
   };
