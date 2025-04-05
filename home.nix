@@ -134,6 +134,7 @@
       set -x PATH $HOME/.nix-profile/bin $PATH
       set -x PATH /nix/var/nix/profiles/default/bin $PATH
       set -x PATH /usr/local/go/bin $PATH
+      set -x PATH /usr/local/odin $PATH
       starship init fish | source
     '';
   };
