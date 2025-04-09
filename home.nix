@@ -195,7 +195,7 @@
     extraConfig = ''
       set -sg escape-time 0
       set-option -g mouse on
-      set-option -g status-bg colour235
+      set-option -g status-bg colour237
       set-option -g status-fg colour250
     '';
   };
