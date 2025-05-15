@@ -183,6 +183,12 @@
         other-lines = "error";
       };
     };
+    languages = {
+      language = [{
+        name = "json";
+        indent = { tab-width = 4; unit = " "; };
+      }];
+    };
   };
   
   programs.tmux = {
