@@ -139,6 +139,7 @@
       set -x PATH /usr/local/odin $PATH
       set -x PATH /usr/local/ols $PATH
       set -x PATH /usr/local/zig $PATH
+      set -x PATH /usr/local/renderdoc/bin $PATH
       starship init fish | source
     '';
   };
