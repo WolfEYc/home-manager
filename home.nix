@@ -137,6 +137,7 @@
       set -x PATH /nix/var/nix/profiles/default/bin $PATH
       set -x PATH /usr/local/go/bin $PATH
       set -x PATH /usr/local/odin $PATH
+      set -x PATH $HOME/go/bin $PATH
       set -x PATH /usr/local/ols $PATH
       set -x PATH /usr/local/zig $PATH
       set -x PATH /usr/local/renderdoc/bin $PATH
