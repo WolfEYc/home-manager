@@ -206,6 +206,7 @@
       set-option -g mouse on
       set-option -g status-bg colour237
       set-option -g status-fg colour250
+      set-window-option -g mode-keys vi
     '';
   };
 }
